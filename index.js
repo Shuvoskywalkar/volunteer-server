@@ -16,7 +16,7 @@ app.get('/',(req,res)=>{
 
 const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true });
 client.connect(err => {
-  const collection = client.db(process.env.DB_NAME).collection(process.env.DB_COLLECTION);
+  const collection = client.db(process.env.DB_NAME).collection('Programs');
   const collection2 = client.db(process.env.DB_NAME).collection('RegInfo');
   //posting the Fakedata
   app.post('/PostedFakedata',(req,res)=>{
